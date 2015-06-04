@@ -13,7 +13,7 @@ func main() {
 				cookie = new(http.Cookie)
 				cookie.Name = "TestCookie"
 				cookie.Value = "123123123"
-				cookie.Domain = "http://localhost:3000"
+				cookie.Domain = "localhost:3000"
 				cookie.Expires = time.Date(2015, time.July, 10, 1, 1, 1, 1, time.UTC)
 				cookie.MaxAge = 180
 				http.SetCookie(res, cookie)
@@ -22,7 +22,8 @@ func main() {
 				fmt.Fprintf(res, "Undefined error")
 			}
 		} else {
-			fmt.Fprintf(res, "I found your cookie!!!")
+			fmt.Fprintln(res, "I found your cookie!!! TestCookie: %v", cookie.Value)
+			fmt.Fprintln(res, "<3 <3 <3")
 		}
 	})
 	http.ListenAndServe(":3000", nil)
