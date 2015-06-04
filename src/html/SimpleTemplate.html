@@ -1,14 +1,24 @@
 <!DOCTYPE html>
+
 <!--
   ~ Copyright 2015 Jakub Martin
   -->
-
+<style>
+    div {
+    display: inline-block;
+    background-color: #aaaaff;
+    border-radius: 20px;
+    padding: 1%;
+    }
+</style>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>Test</title>
 </head>
 <body>
-<p>Hello {{.Name}} aged {{.Age}}. Nice to meet you!</p>
+<div>
+    <p>Hello {{.Name}} aged {{.Age}}. Nice to meet you!</p>
+</div>
 </body>
 </html>

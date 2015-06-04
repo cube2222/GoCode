@@ -1,6 +1,5 @@
 package main
 import (
-	"github.com/go-martini/martini"
 	"net/http"
 	"html/template"
 	"fmt"
@@ -31,12 +30,11 @@ func main() {
 
 	testSubject := Human{"Kuba", 17}
 
-	m := martini.Classic()
-	m.Get("/", func(res http.ResponseWriter, req *http.Request) {
+	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
 		err := tmpl.Execute(res, testSubject)
 		if err != nil {
 			fmt.Println(err)
 		}
 	})
-	m.Run()
+	http.ListenAndServe(":3000", nil)
 }
