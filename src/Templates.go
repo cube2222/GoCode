@@ -22,7 +22,6 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	//tmpl, err := template.New("test").Parse("Hello {{.Name}} aged {{.Age}}. Nice to meet you!!!")
 	tmpl, err := template.New("test").Parse(string(data))
 	if err != nil {
 		fmt.Println(err)
