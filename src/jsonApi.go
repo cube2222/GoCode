@@ -1,7 +1,6 @@
 package main
 import (
 	"net/http"
-	"github.com/go-martini/martini"
 	"encoding/json"
 )
 
@@ -11,11 +10,10 @@ type Client struct {
 }
 
 func main() {
-	m := martini.Classic()
 	client := Client{"Kuba", 17}
-	m.Get("/getjson", func(res http.ResponseWriter, req *http.Request) {
+	http.HandleFunc("/getjson", func(res http.ResponseWriter, req *http.Request) {
 		jts := json.NewEncoder(res)
 		jts.Encode(client)
 	})
-	m.Run()
+	http.ListenAndServe(":3000", nil)
 }
