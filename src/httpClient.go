@@ -1,8 +1,9 @@
 package main
+
 import (
 	"fmt"
-	"net/http"
 	"io/ioutil"
+	"net/http"
 )
 
 func main() {

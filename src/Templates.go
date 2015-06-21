@@ -1,10 +1,11 @@
 package main
+
 import (
-	"net/http"
-	"html/template"
 	"fmt"
-	"os"
+	"html/template"
 	"io/ioutil"
+	"net/http"
+	"os"
 )
 
 type Human struct {

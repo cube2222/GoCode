@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"crypto/md5"
+	"fmt"
 )
 
 func main() {

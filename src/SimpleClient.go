@@ -1,11 +1,10 @@
 package main
+
 import (
-	"net/http"
 	"fmt"
 	"io/ioutil"
+	"net/http"
 )
-
-
 
 func main() {
 	res, err := http.Get("http://localhost:3000/getjson")

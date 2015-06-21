@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"github.com/go-martini/martini"
 	"net/http"
-	"fmt"
 )
 
 func main() {

@@ -1,11 +1,12 @@
 package main
+
 import (
-	"github.com/go-martini/martini"
-	"net/http"
-	"html/template"
 	"fmt"
-	"os"
+	"github.com/go-martini/martini"
+	"html/template"
 	"io/ioutil"
+	"net/http"
+	"os"
 )
 
 type Human struct {

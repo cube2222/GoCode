@@ -1,8 +1,8 @@
 package main
 
 import (
-	"net"
 	"fmt"
+	"net"
 	"time"
 )
 
@@ -13,7 +13,7 @@ func main() {
 	}
 	for {
 		conn, err := ln.Accept()
-		if (err != nil) {
+		if err != nil {
 			fmt.Println(err)
 		}
 		go handleConnection(conn)

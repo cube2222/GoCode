@@ -1,11 +1,12 @@
 package main
+
 import (
-	"net/http"
 	"encoding/json"
+	"net/http"
 )
 
 type Client struct {
-	Name string    `json:"name"`
+	Name string `json:"name"`
 	Id   int    `json:"id"`
 }
 
