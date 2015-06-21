@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
-	"fmt"
 )
 
 type Person struct {
@@ -24,7 +24,7 @@ func main() {
 		panic(err)
 	}
 	result := Person{}
-	err = c.Find(bson.M{"name" : "Ben"}).One(&result)
+	err = c.Find(bson.M{"name": "Ben"}).One(&result)
 	if err != nil {
 		panic(err)
 	}
