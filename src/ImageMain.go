@@ -1,11 +1,12 @@
 package main
+
 import "image/color"
 import "image"
 import (
-	"image/jpeg"
-	"os"
 	"fmt"
+	"image/jpeg"
 	"math"
+	"os"
 )
 
 type MyImage struct {

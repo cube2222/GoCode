@@ -8,17 +8,17 @@ import (
 )
 
 type MyImage struct {
-
 }
+
 func (i MyImage) ColorModel() color.Model {
 	return color.RGBAModel
 }
 
 func (MyImage) At(x, y int) color.Color {
 	if y != 0 {
-		return color.RGBA{0, 0, uint8(x*x*y*y), 255}
+		return color.RGBA{0, 0, uint8(x * x * y * y), 255}
 	} else {
-		return color.RGBA{0, 0, uint8(x*x*y*y), 255}
+		return color.RGBA{0, 0, uint8(x * x * y * y), 255}
 	}
 }
 
