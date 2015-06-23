@@ -6,6 +6,11 @@ import (
 	"net/url"
 )
 
+/*
+Example usage:
+http://localhost:3000/?variable=4&name=HelloWorld
+ */
+
 func main() {
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
 		values, _ := url.ParseQuery(req.URL.RawQuery)
