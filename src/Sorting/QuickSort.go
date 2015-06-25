@@ -27,6 +27,8 @@ func sort(tab []int, left, right int) []int {
 				tab[j] = helper
 			}
 		}
+		tab = sort(tab, left, m)
+		tab = sort(tab, m, right)
 	}
 	return tab
 }
