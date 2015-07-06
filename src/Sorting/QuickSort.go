@@ -1,5 +1,8 @@
 package main
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func sort(tab []int, left, right int) []int {
 	i, j, m := left, right, (left+right)/2
@@ -26,6 +29,13 @@ func sort(tab []int, left, right int) []int {
 				tab[i] = tab[j]
 				tab[j] = helper
 			}
+			if tab[i] == tab[j] {
+				if (tab[i] < tab[m]) {
+					i++
+				} else {
+					j--
+				}
+			}
 		}
 		tab = sort(tab, left, m)
 		tab = sort(tab, m, right)
@@ -35,8 +45,12 @@ func sort(tab []int, left, right int) []int {
 
 func main() {
 	var tab []int
-	tab = []int{0, 2, 1, 7, 4, 3, 8}
+	tab = []int{}
+	for i := 0; i < 1000; i++ {
+		tab = append(tab, rand.Intn(100))
+	}
 	fmt.Println(tab)
+	fmt.Println("***************************************************************")
 	tab = sort(tab, 0, len(tab)-1)
 	fmt.Println(tab)
 }
