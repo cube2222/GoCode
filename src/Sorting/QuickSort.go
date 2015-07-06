@@ -24,13 +24,13 @@ func sort(tab []int, left, right int) []int {
 			for tab[j] > tab[m] {
 				j--
 			};
-			if (tab[i] > tab[j]) {
+			if tab[i] > tab[j] {
 				helper := tab[i]
 				tab[i] = tab[j]
 				tab[j] = helper
 			}
 			if tab[i] == tab[j] {
-				if (tab[i] < tab[m]) {
+				if tab[i] <= tab[m] {
 					i++
 				} else {
 					j--
