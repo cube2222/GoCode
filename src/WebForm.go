@@ -14,7 +14,7 @@ func main() {
 		fmt.Fprintln(res, "Welcome ", req.Form.Get("username"), ", thank you for logging in!")
 	})
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-		data, err := ioutil.ReadFile("/home/user/GoCode/src/html/Form.html")
+		data, err := ioutil.ReadFile("src/html/Form.html")
 		if err != nil {
 			panic(err)
 		}

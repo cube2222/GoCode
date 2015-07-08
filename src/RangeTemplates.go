@@ -15,7 +15,7 @@ func main() {
 	myInfo.Names[0] = "Ben"
 	myInfo.Names[1] = "Tom"
 	myInfo.Names[2] = "Jim"
-	file, err := os.Open("C:/Users/User/Documents/GoCode/src/html/RangeTemplate.html")
+	file, err := os.Open("src/html/RangeTemplate.html")
 	if err != nil {
 		panic(err)
 	}

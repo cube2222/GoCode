@@ -14,7 +14,7 @@ type Human struct {
 }
 
 func main() {
-	f, err := os.Open("/home/user/GoCode/src/html/SimpleTemplate.html")
+	f, err := os.Open("src/html/SimpleTemplate.html")
 	defer f.Close()
 	if err != nil {
 		fmt.Println(err)
