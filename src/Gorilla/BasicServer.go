@@ -11,6 +11,5 @@ func main() {
 	r.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
 		fmt.Fprint(w, "Hello Gorilla!")
 	})
-	http.Handle("/", r)
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", r)
 }

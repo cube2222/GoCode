@@ -11,6 +11,5 @@ func main() {
 		variables := mux.Vars(req)
 		fmt.Fprintf(w, "Hello %v aged %v, nice to meet you!", variables["name"], variables["age"])
 	})
-	http.Handle("/", r)
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", r)
 }
