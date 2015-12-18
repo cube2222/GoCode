@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 type Person struct {
@@ -10,14 +12,15 @@ type Person struct {
 }
 
 func main() {
-	session, err := mgo.Dial("192.168.1.14:27017")
+	session, err := mgo.Dial("localhost:27017")
 	if err != nil {
 		panic(err)
 	}
 	defer session.Close()
+
 	c := session.DB("test").C("people")
 
-	err = c.Insert(&Person{"Bob", 15, })
+	err = c.Insert(&Person{"Ben", 10})
 	if err != nil {
 		panic(err)
 	}
