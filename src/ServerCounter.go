@@ -13,5 +13,5 @@ func main() {
 		fmt.Fprintf(w, "Hello, %v client!", ClientCount)
 	})
 
-	http.ListenAndServe(":3400", nil)
+	http.ListenAndServe(":80", nil)
 }
