@@ -8,17 +8,14 @@ import (
 )
 
 func main() {
-	ServiceAddr := ":3000"
-	RealAddress, err := net.ResolveTCPAddr("tcp", ServiceAddr)
-	checkError(err)
-	serv, err := net.ListenTCP("tcp", RealAddress)
+	server, err := net.Listen("tcp", ":3000")
 	checkError(err)
 	for {
-		conn, err := serv.Accept()
+		conn, err := server.Accept()
 		if err != nil {
 			continue
 		}
-		conn.Write([]byte(time.Now().String()))
+		conn.Write(append([]byte(time.Now().String()), '\n'))
 		conn.Close()
 	}
 }
