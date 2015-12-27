@@ -9,13 +9,14 @@ import (
 
 func main() {
 	ServiceAddr := ":3000"
-	Address, err := net.ResolveTCPAddr("tcp", ServiceAddr)
+	RealAddress, err := net.ResolveTCPAddr("tcp", ServiceAddr)
 	checkError(err)
-	Listener, err := net.ListenTCP("tcp", Address)
+	serv, err := net.ListenTCP("tcp", RealAddress)
+	checkError(err)
 	for {
-		conn, err := Listener.Accept()
-		if(err != nil) {
-			continue //Who cares? We're here to serve more clients.
+		conn, err := serv.Accept()
+		if err != nil {
+			continue
 		}
 		conn.Write([]byte(time.Now().String()))
 		conn.Close()
