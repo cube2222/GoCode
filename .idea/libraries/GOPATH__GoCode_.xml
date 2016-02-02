@@ -6,9 +6,9 @@
     <JAVADOC />
     <SOURCES />
     <excluded>
+      <root url="file://$PROJECT_DIR$" />
       <root url="file://C:/GoPackages/src/github.com/gorilla/context/.git" />
       <root url="file://C:/GoPackages/src/github.com/gorilla/mux/.git" />
-      <root url="file://$PROJECT_DIR$" />
     </excluded>
   </library>
 </component>
